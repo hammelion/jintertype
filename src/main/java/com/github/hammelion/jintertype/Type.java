@@ -1,6 +1,7 @@
 package com.github.hammelion.jintertype;
 
 import java.util.HashMap;
+import java.util.Optional;
 import java.util.function.Function;
 
 import javassist.CannotCompileException;
@@ -88,5 +89,13 @@ public interface Type<V> {
         if (object.isValid())
             return object;
         throw new IllegalArgumentException("Invalid value " + String.valueOf(value) + " for type " + clazz.getSimpleName());
+    }
+
+    static <V, C extends Type<V>> Optional<C> ofOptional(V value, Class<C> clazz) {
+        C object = of(value, clazz);
+        if (object.value() == null) {
+            return Optional.empty();
+        }
+        return Optional.of(object);
     }
 }

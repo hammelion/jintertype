@@ -1,10 +1,12 @@
 package com.github.hammelion.jintertype;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 import org.junit.Test;
 
@@ -69,5 +71,21 @@ public class TypeTest {
     @Test
     public void testThreadSafety() throws Exception {
         Arrays.asList(new Integer[10000000]).parallelStream().forEach(val -> Type.of(VAL1, SomeStringTestType.class));
+    }
+
+    @Test
+    public void testOptional() throws Exception {
+        SomeStringTestType test = Type.of(VAL1, SomeStringTestType.class);
+        Optional<SomeStringTestType> testOptional = Type.ofOptional(VAL1, SomeStringTestType.class);
+
+        assertEquals(test, testOptional.get());
+        assertTrue(testOptional.isPresent());
+    }
+
+    @Test
+    public void testOptionalEmpty() throws Exception {
+        Optional<SomeStringTestType> testOptional = Type.ofOptional(null, SomeStringTestType.class);
+
+        assertFalse(testOptional.isPresent());
     }
 }
