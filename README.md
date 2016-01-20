@@ -14,7 +14,7 @@ Java Interface Type Pattern Implementation
 <dependency>
   <groupId>com.github.hammelion</groupId>
   <artifactId>jintertype</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
 </dependency>
 ```
 
