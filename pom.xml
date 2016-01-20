@@ -5,7 +5,7 @@
     <artifactId>jintertype</artifactId>
     <packaging>jar</packaging>
     <groupId>com.github.hammelion</groupId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.1</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Java Interface Type Pattern Implementation
     </description>
@@ -30,7 +30,7 @@
         <connection>scm:git@github.com:hammelion/jintertype.git</connection>
         <developerConnection>scm:git:git@github.com:hammelion/jintertype.git</developerConnection>
         <url>git@github.com:hammelion/jintertype.git</url>
-      <tag>HEAD</tag>
+      <tag>v1.1</tag>
   </scm>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
