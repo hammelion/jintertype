@@ -121,6 +121,6 @@ if (bob.hasErrors()){
 ## Efficiency
 
 * Read operation has the same efficiency as a traditional approach
-* Write operation is 1.3 times slower then a traditional approach, because a new class is created (by first use)
+* Write operation is 1.3 times slower than a traditional approach, because a new class is created (by first use)
 
 
